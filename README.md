@@ -9,7 +9,7 @@ This folder handles the automated loading, extraction, filtering, and cross-sect
 3. **Automated File Formatting:** Strips complex structural notations (commas, spaces, ampersands) to automatically format distinct graphic asset files.
 
 ## Dashboard Access
-👉 `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/Task_1_Demographics/index.html`
+ `https://aremufemi.github.io/prodigyinfotechTASK1/`
 
 ## Execution Baseline
 ```bash
