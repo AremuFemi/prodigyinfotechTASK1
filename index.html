@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Population Analytics Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; display: flex; min-height: 100vh; }
+
+        /* Sidebar */
+        .sidebar { width: 260px; background-color: #1e293b; color: #fff; padding: 20px; position: fixed; height: 100%; overflow-y: auto; }
+        .sidebar h2 { font-size: 20px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; color: #38bdf8; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin: 15px 0; }
+        .sidebar ul li a { color: #cbd5e1; text-decoration: none; font-size: 16px; display: block; padding: 10px; border-radius: 6px; transition: all 0.3s; }
+        .sidebar ul li a:hover { background-color: #334155; color: #fff; }
+
+        /* Main Content */
+        .main-content { margin-left: 260px; padding: 30px; width: calc(100% - 260px); }
+        .header { margin-bottom: 30px; }
+        .header h1 { font-size: 28px; color: #0f172a; }
+        .header p { color: #64748b; margin-top: 5px; }
+        .section-title { font-size: 22px; color: #1e293b; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
+
+        /* KPI Metrics */
+        .metrics-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .metric-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-left: 5px solid #38bdf8; }
+        .metric-card h3 { font-size: 14px; color: #64748b; text-transform: uppercase; }
+        .metric-card p { font-size: 24px; font-weight: bold; color: #0f172a; margin-top: 5px; }
+
+        /* Charts Grid */
+        .charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .chart-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; }
+        .chart-card h4 { align-self: flex-start; font-size: 16px; color: #334155; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; width: 100%; padding-bottom: 8px; }
+        .chart-card img { max-width: 100%; height: auto; border-radius: 4px; }
+        .full-width { grid-column: span 2; }
+
+        /* Regional Deep Dives Section (Scrolling images for very tall charts) */
+        .regional-card img { max-height: 600px; object-fit: contain; }
+
+        /* Responsive Layout */
+        @media (max-width: 1024px) {
+            .charts-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .main-content { margin-left: 0; width: 100%; }
+            .sidebar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>PopAnalytics</h2>
+        <ul>
+            <li><a href="#global" style="background-color: #334155; color: white;">Global Dashboard</a></li>
+            <li><a href="#regional">Regional Deep Dives</a></li>
+            <li><a href="https://data.worldbank.org" target="_blank">World Bank Data</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header" id="global">
+            <h1>Global Demographics Dashboard</h1>
+            <p>PRODIGY TECH TASK 1</p>
+        </div>
+
+        <div class="metrics-container">
+            <div class="metric-card"><h3>Total Countries</h3><p>217</p></div>
+            <div class="metric-card" style="border-left-color: #10b981;"><h3>Estimated Global Pop (2024)</h3><p>~ 8.12 Billion</p></div>
+            <div class="metric-card" style="border-left-color: #f59e0b;"><h3>Largest Region</h3><p>East Asia & Pacific</p></div>
+            <div class="metric-card" style="border-left-color: #8b5cf6;"><h3>Most Population</h3><p>India</p></div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card full-width">
+                <h4>Macro Trends: Geographical Regional Aggregates</h4>
+                <img src="region_population_trend.png" alt="Population Trend by Region">
+            </div>
+            <div class="chart-card">
+                <h4>Top Tier Populations (2024)</h4>
+                <img src="top_10_countries_2024.png" alt="Top 10 Countries">
+            </div>
+            <div class="chart-card">
+                <h4>Macroeconomic Wealth Cohorts</h4>
+                <img src="income_group_population_2024.png" alt="Income Group Breakdown">
+            </div>
+        </div>
+
+        <h2 class="section-title" id="regional">Regional Deep Dives (2024)</h2>
+        <div class="charts-grid">
+
+            <div class="chart-card regional-card">
+                <h4>North America</h4>
+                <img src="region_breakdown_North_America.png" alt="North America Breakdown">
+            </div>
+
+            <div class="chart-card regional-card">
+                <h4>South Asia</h4>
+                <img src="region_breakdown_South_Asia.png" alt="South Asia Breakdown">
+            </div>
+
+            <div class="chart-card regional-card">
+                <h4>East Asia & Pacific</h4>
+                <img src="region_breakdown_East_Asia_Pacific.png" alt="East Asia Pacific Breakdown">
+            </div>
+
+            <div class="chart-card regional-card">
+                <h4>Europe & Central Asia</h4>
+                <img src="region_breakdown_Europe_Central_Asia.png" alt="Europe & Central Asia Breakdown">
+            </div>
+
+            <div class="chart-card regional-card full-width">
+                <h4>Sub-Saharan Africa</h4>
+                <img src="region_breakdown_Sub-Saharan_Africa.png" alt="Sub-Saharan Africa Breakdown" style="max-height: none;">
+            </div>
+
+            <div class="chart-card regional-card full-width">
+                <h4>Latin America & Caribbean</h4>
+                <img src="region_breakdown_Latin_America_Caribbean.png" alt="Latin America Breakdown" style="max-height: none;">
+            </div>
+
+            <div class="chart-card regional-card full-width">
+                <h4>Middle East & North Africa</h4>
+                <img src="region_breakdown_Middle_East_North_Africa_Afghanistan_Pakistan.png" alt="Middle East Breakdown" style="max-height: none;">
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
